@@ -26,6 +26,20 @@ class Board
     end
   end
 
+  def turn_robot_right(name)
+    find_robot(name) && find_robot(name).turn_right
+  end
+
+  def turn_robot_left(name)
+    find_robot(name) && find_robot(name).turn_left
+  end
+
+  def report_robot(name)
+    find_robot(name) && find_robot(name).report
+  end
+
+  private
+
   def add_or_find_robot(name)
     unless player_exists?(name)
       new_robot = Robot.new(name)
@@ -61,18 +75,5 @@ class Board
     end
     is_empty
   end
-
-  def turn_robot_right(name)
-    find_robot(name) && find_robot(name).turn_right
-  end
-
-  def turn_robot_left(name)
-    find_robot(name) && find_robot(name).turn_left
-  end
-
-  def report_robot(name)
-    find_robot(name) && find_robot(name).report
-  end
-
 
 end

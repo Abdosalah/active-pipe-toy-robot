@@ -1,10 +1,8 @@
 require_relative 'board'
-require_relative 'robot'
-
 
 def execute_commands
   board = Board.new
-  File.foreach('test-data/example_one.txt') do |line|
+  File.foreach(ARGV.first || 'test-data/example_one.txt') do |line|
     name, action = line.split(': ')
 
     case action
@@ -26,4 +24,3 @@ def execute_commands
 end
 
 execute_commands
-
