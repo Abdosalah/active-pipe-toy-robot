@@ -1,7 +1,6 @@
 require_relative 'robot'
 
 class Board
-
   attr_accessor :robots, :names
 
   def initialize

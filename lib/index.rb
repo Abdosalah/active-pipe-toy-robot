@@ -1,8 +1,10 @@
+#!/usr/bin/env ruby
 require_relative 'board'
 
 def execute_commands
   board = Board.new
-  File.foreach(ARGV.first || 'test-data/example_one.txt') do |line|
+  File.foreach("test-data/#{ARGV.first || 'example_one.txt'}") do |line|
+    # I extract the name which is used as an identifier for the robot
     name, action = line.split(': ')
 
     case action
@@ -18,7 +20,7 @@ def execute_commands
     when /REPORT/
       puts board.report_robot(name)
     else
-      puts 'INVALID COMMAND'
+      puts 'Invalid command'
     end
   end
 end

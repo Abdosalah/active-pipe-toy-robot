@@ -1,7 +1,6 @@
 class Robot
   attr_accessor :x, :y, :dir, :name
 
-
   def initialize(name)
     @name = name
   end
