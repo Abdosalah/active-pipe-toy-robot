@@ -7,7 +7,7 @@
 * To run all tests `rake test`
 
 ## About the application
-The application was written just using `ruby` version 2.7.0.
+The application was written using `ruby` version 2.7.0.
 The testing framework used is minitest.
 
 
